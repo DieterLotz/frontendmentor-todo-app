@@ -23,6 +23,13 @@
       text-transform: uppercase;
       font-size: 1.7rem;
     }
+
+    img {
+      position: absolute;
+      top: 3rem;
+      right: $global-margin;
+      cursor: pointer;
+    }
   }
 
   main {

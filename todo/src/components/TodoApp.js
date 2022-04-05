@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddTodo from './AddTodo';
-import classes from './TodoContainer.module.scss'
+import classes from './TodoApp.module.scss'
 import TodoList from "./TodoList";
 
 const todos = [
@@ -16,7 +16,7 @@ const todos = [
     }
 ];
 
-const TodoContainer = () => {
+const TodoApp = () => {
     const [todoList, setTodoList] = useState(todos);
 
     const onChangeHandler = (key) => {
@@ -61,4 +61,4 @@ const TodoContainer = () => {
     );
 }
  
-export default TodoContainer;
+export default TodoApp;
