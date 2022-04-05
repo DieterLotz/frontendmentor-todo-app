@@ -6,7 +6,7 @@
     width: 100%;
     height: auto;
     min-height: 3rem;
-    background-color: $very-dark-desaturated-blue;
+    background-color: $dark-very-dark-desaturated-blue;
     z-index: 4;
     margin-top: 1rem;
     border-radius: $global-border-radius;
@@ -15,37 +15,12 @@
         display: flex;
         background: transparent;
         box-sizing: border-box;
-        border-bottom: 1px solid $light-grayish-blue;
+        border-bottom: 1px solid $dark-light-grayish-blue;
         align-items: center;
         height: 3rem;
 
         &:last-of-type {
             border-bottom: none;
-        }
-
-        input[type=checkbox] {
-            outline: none;
-            padding: .2rem;
-            width: 1.2rem;
-            min-width: 1.2rem;
-            height: 1.2rem;
-            border-radius: 50%;
-            border: 1px solid $very-dark-grayish-blue;
-            margin-left: $global-margin;
-            appearance: none;
-            -webkit-appearance: none;
-            cursor: pointer;
-
-            &:checked {
-                background: url('./../assets/svg/icon-check.svg') no-repeat, $check-icon-gradient no-repeat;
-                background-size: 80%, 100%;
-                background-position: center;
-                border: none;
-            }
-
-            &:hover:not(:checked){
-                background: transparent;           
-            }
         }
 
         label {
@@ -54,7 +29,7 @@
             width: 100%;
             margin: 0 1rem;
             font-weight: 300;
-            color: $very-dark-grayish-blue;
+            color: $dark-very-dark-grayish-blue;
             font-size: 0.8rem;
             cursor: pointer;
         }
@@ -64,7 +39,7 @@
         }
 
         input[type=checkbox]:not(:checked) ~ label {
-            color: $light-grayish-blue;
+            color: $dark-light-grayish-blue;
         }
 
         button {

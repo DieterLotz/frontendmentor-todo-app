@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import classes from './AddTodo.module.scss';
+import './../styles/_checkbox.scss';
 
 const AddTodo = (props) => {
     const input = useRef('');

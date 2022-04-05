@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import classes from './TodoList.module.scss';
+import './../styles/_checkbox.scss';
 
 const TodoList = (props) => {
     return (
