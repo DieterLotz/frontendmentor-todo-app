@@ -15,7 +15,7 @@ const TodoList = (props) => {
             })}
             <div>
                 <label>{props.todos.filter((item) => item.isCompleted === false).length} items left</label>
-                <button type='button'>Clear Completed</button>
+                <button type='button' onClick={props.onClearCompleted}>Clear Completed</button>
             </div>
         </div>
     );

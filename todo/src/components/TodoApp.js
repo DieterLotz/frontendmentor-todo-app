@@ -39,6 +39,12 @@ const TodoApp = () => {
         });
     };
 
+    const clearCompleted = () => {
+        setTodoList(prev => {
+            return prev.filter(todo => todo.isCompleted === false);
+        });
+    };
+
     const onSubmitHandler = (todo) => {
         setTodoList(prev => {
             return [
@@ -55,7 +61,7 @@ const TodoApp = () => {
     return (
         <div className={classes['todo-container']}> 
             <AddTodo onSubmit={onSubmitHandler}/>
-            <TodoList todos={todoList} onChange={onChangeHandler} onRemove={removeTodo}/>
+            <TodoList todos={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
             {/* <TodoFilter/> */}
         </div>
     );
