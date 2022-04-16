@@ -1,26 +1,42 @@
 import React, { useRef, useState } from 'react';
-import classes from './AddTodo.module.scss';
+import styles from './AddTodo.module.scss';
 import './../styles/_checkbox.scss';
 
 const AddTodo = (props) => {
-    const [enteredValue, setEnteredValue ] = useState('');
+    const [enteredTodo, setEnteredTodo ] = useState({text: '', isCompleted: false});
 
-    const handleOnChange = (event) => {
-        event.preventDefault();
-        setEnteredValue(event.target.value);
+    const handleTodoOnChange = (event) => {
+        setEnteredTodo(previous => {
+            return {
+                ...previous,
+                text : event.target.value,
+            }
+        });
+    };
+
+    const handleIsCompletedOnChange = (event) => {
+        setEnteredTodo(previous => {
+            return {
+                ...previous,
+                isCompleted : event.target.checked,
+            }
+        });
     };
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        props.onSubmit(enteredValue);
-        setEnteredValue('');
+        if(enteredTodo.text)
+        {
+            props.onSubmit(enteredTodo);
+            setEnteredTodo({text: '', isCompleted: false});
+        }
     };
 
     return ( 
-        <div className={classes['add-todo-container']}>
-           <form className={classes['todo-form']} onSubmit={onSubmitHandler}>
-            <input type="checkbox"></input>
-            <input type="text" placeholder="Create a new todo..." onChange={handleOnChange} value={enteredValue}></input>
+        <div className={styles['add-todo-container']}>
+           <form className={styles['todo-form']} onSubmit={onSubmitHandler}>
+            <input type="checkbox" onChange={handleIsCompletedOnChange} checked={enteredTodo.isCompleted}></input>
+            <input type="text" placeholder="Create a new todo..." onChange={handleTodoOnChange} value={enteredTodo.text}></input>
            </form>
         </div>
     );

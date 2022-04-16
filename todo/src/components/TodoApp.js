@@ -58,8 +58,8 @@ const TodoApp = () => {
                 ...prev,
                 {
                     key: prev.length + 1,
-                    text : todo,
-                    isCompleted: false
+                    text : todo.text,
+                    isCompleted: todo.isCompleted
                 }
             ];
         });
