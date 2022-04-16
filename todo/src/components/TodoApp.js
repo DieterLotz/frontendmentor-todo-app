@@ -3,6 +3,9 @@ import AddTodo from './AddTodo';
 import classes from './TodoApp.module.scss'
 import TodoList from "./TodoList";
 
+import MoonIcon from './../assets/svg/icon-moon.svg';
+import SunIcon from './../assets/svg/icon-sun.svg'
+
 const todos = [
     {
         key: 1,
@@ -18,6 +21,10 @@ const todos = [
 
 const TodoApp = () => {
     const [todoList, setTodoList] = useState(todos);
+
+    const onClick = () => {
+        //toggle theme
+      };
 
     const onChangeHandler = (key) => {
         setTodoList(prev => {
@@ -59,11 +66,17 @@ const TodoApp = () => {
     };
 
     return (
-        <div className={classes['todo-container']}> 
-            <AddTodo onSubmit={onSubmitHandler}/>
-            <TodoList todos={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
-            {/* <TodoFilter/> */}
-        </div>
+        <>
+            <div className={classes['todo-container']}> 
+                <div className={classes['header']}>
+                    <h1>todo</h1>
+                    <img src={SunIcon} alt="" onClick={onClick}/>
+                </div>
+                <AddTodo onSubmit={onSubmitHandler}/>
+                <TodoList todos={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
+                {/* <TodoFilter/> */}
+            </div>
+        </>
     );
 }
  

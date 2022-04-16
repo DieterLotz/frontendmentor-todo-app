@@ -2,7 +2,43 @@
 
 .todo-container {
     display: flex;
+    position: relative;
+    width: 100%;
     flex-direction: column;
-    margin: -5.5rem $global-margin 0 $global-margin;
+    margin: -12.5rem $global-margin 0 $global-margin;
     background-color: transparent;
+
+    .header {
+        margin-bottom: 7rem;
+
+        h1 {
+            position: absolute;
+            color: white;
+            top: 3rem;
+            left: 0;
+            text-decoration: solid;
+            letter-spacing: .6rem;
+            text-transform: uppercase;
+            font-size: 1.7rem;
+          }
+      
+          img {
+            position: absolute;
+            top: 3rem;
+            right: 0;
+            cursor: pointer;
+          }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .todo-container {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1023px) {
+    .todo-container {
+        width: 40%;
+    }
 }
