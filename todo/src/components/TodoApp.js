@@ -8,7 +8,7 @@ import SunIcon from './../assets/svg/icon-sun.svg'
 
 import { v4 as uuidv4 } from 'uuid';
 
-const todos = [
+const INITIAL_TODOS = [
     {
         key: uuidv4(),
         text: 'Clean the dishes',
@@ -22,7 +22,7 @@ const todos = [
 ];
 
 const TodoApp = () => {
-    const [todoList, setTodoList] = useState(todos);
+    const [todoList, setTodoList] = useState(INITIAL_TODOS);
 
     const onClick = () => {
         //toggle theme
@@ -75,7 +75,7 @@ const TodoApp = () => {
                     <img src={SunIcon} alt="" onClick={onClick}/>
                 </div>
                 <AddTodo onSubmit={onSubmitHandler}/>
-                <TodoList todos={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
+                <TodoList todoList={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
             </div>
         </>
     );
