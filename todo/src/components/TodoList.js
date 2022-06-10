@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import styles from './TodoList.module.scss';
 import './../styles/_checkbox.scss';
 import TodoFilter from './TodoFilter';
@@ -27,10 +27,10 @@ const TodoList = (props) => {
                         <button onClick={() => { props.onRemove(item.key)}}></button>
                     </div>)
             })}
-            <div>
+            <div className={styles['filter-section']}>
                 <label>{filteredTodos.filter((item) => item.isCompleted === false).length} items left</label>
                 <TodoFilter onFilter={filterChangedHandler}/>
-                <button type='button' onClick={props.onClearCompleted}>Clear Completed</button>
+                <button type='submit' onClick={props.onClearCompleted}>Clear Completed</button>
             </div>
         </div>
     );

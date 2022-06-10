@@ -1,6 +1,8 @@
 @import './variables';
 
 input[type=checkbox] {
+    box-sizing: border-box;
+    position: relative;
     outline: none;
     padding: .2rem;
     width: 1.2rem;
@@ -14,9 +16,28 @@ input[type=checkbox] {
     cursor: pointer;
 
     &:checked {
-        background: url('./../assets/svg/icon-check.svg') no-repeat, $check-icon-gradient no-repeat;
+        background: url('./../assets/svg/icon-check.svg') no-repeat, $linear-gradient no-repeat;
         background-size: 80%, 100%;
         background-position: center;
         border: none;
+    }
+
+    &:not(:checked) {
+        background: $linear-gradient no-repeat;
+        background-size: 100%, 100%;
+        background-position: center;
+        border: none;
+
+        &::after {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            top: .8px;
+            left: .8px;
+            background-color: $dark-very-dark-desaturated-blue;
+            width: 92%;
+            height: 92%;
+            border-radius: 50%;
+        }
     }
 }

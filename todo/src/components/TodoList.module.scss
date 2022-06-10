@@ -56,7 +56,7 @@
         }
     }
 
-    & :last-child {
+    .filter-section {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -65,13 +65,18 @@
         color: $dark-very-dark-grayish-blue;
         font-size: 0.8rem;
 
-        & :last-child[type=button] {
+        & button[type=submit]:last-of-type {
             margin: 0;
             border: none;
             outline: none;
+            color: inherit;
             background: transparent;
             font-family: $font-family;
             cursor: pointer;
+            
+            &:hover {
+                color: $dark-light-grayish-blue-hover;
+            }
         }
     }
 }

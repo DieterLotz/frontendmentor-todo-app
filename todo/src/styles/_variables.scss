@@ -4,6 +4,13 @@ $font-family-primary: 'Josefin Sans', sans-serif;
 $font-family-secondary: 'Red Hat Text', sans-serif;
 
 $font-family: $font-family-primary, $font-family-secondary;
+
+$background-color-page: #fff;
+$background-color-todo: #fff;
+$input-color: #fff;
+$input-color-hover: #fff;
+$button-color: #fff;
+
 //colors
 $color-primary: hsl(220, 98%, 61%);
 
@@ -25,7 +32,7 @@ $dark-very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
 
 
 // gradient
-$check-icon-gradient: linear-gradient(to right,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$linear-gradient: linear-gradient(to right bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 //global margins
 $global-margin: 1rem;
