@@ -31,7 +31,7 @@
             margin: 0 1rem;
             font-family: $font-family;
             font-weight: 300;
-            color: $dark-very-dark-grayish-blue;
+            color: $dark-dark-grayish-blue;
             font-size: 0.8rem;
             cursor: pointer;
         }
@@ -62,7 +62,7 @@
         align-items: center;
         height: 3rem;
         margin: 0 $global-margin;
-        color: $dark-very-dark-grayish-blue;
+        color: $dark-dark-grayish-blue;
         font-size: 0.8rem;
 
         & button[type=submit]:last-of-type {

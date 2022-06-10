@@ -15,17 +15,25 @@
     padding: 0 2rem;
 
     button {
-        color: $dark-light-grayish-blue;
+        color: $dark-dark-grayish-blue;
         margin: 0;
         border: none;
         outline: none;
         background: transparent;
         font-family: $font-family;
         cursor: pointer;
+
+        &:hover {
+            color: $dark-light-grayish-blue-hover;
+        }
     }
 
     .active-filter {
         color: $color-primary;
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }
 
