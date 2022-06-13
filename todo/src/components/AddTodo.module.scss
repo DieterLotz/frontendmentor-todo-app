@@ -1,11 +1,18 @@
 @import './../styles/variables';
 
 .add-todo-container {
-    background-color: $dark-very-dark-desaturated-blue;
     width: 100%;
     height: 2.8rem;
     z-index: 4;
     border-radius: $global-border-radius;
+
+    &[data-theme=dark] {
+        background-color: $dark-very-dark-desaturated-blue;
+    }
+
+    &[data-theme=light] {
+        background-color: $light-very-light-gray;
+    }
 
    .todo-form {
     display: flex;
@@ -18,11 +25,18 @@
             width: 100%;
             margin-left: $global-margin;
             background: transparent;
-            color: $dark-light-grayish-blue;
             outline: none;
             border: none;
-            font-size: .8rem;
+            font-size: .9rem;
             cursor: text;
+
+            &[data-theme=dark] {
+                color: $dark-light-grayish-blue;
+            }
+        
+            &[data-theme=light] {
+                color: $light-very-dark-grayish-blue;
+            }
         }
    }
 }

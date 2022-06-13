@@ -5,12 +5,6 @@ $font-family-secondary: 'Red Hat Text', sans-serif;
 
 $font-family: $font-family-primary, $font-family-secondary;
 
-$background-color-page: #fff;
-$background-color-todo: #fff;
-$input-color: #fff;
-$input-color-hover: #fff;
-$button-color: #fff;
-
 //colors
 $color-primary: hsl(220, 98%, 61%);
 
@@ -29,7 +23,6 @@ $dark-light-grayish-blue-hover: hsl(236, 33%, 92%);
 $dark-dark-grayish-blue: hsl(234, 11%, 52%);
 $dark-very-dark-grayish-blue: hsl(233, 14%, 35%);
 $dark-very-dark-grayish-blue-hover: hsl(237, 14%, 26%);
-
 
 // gradient
 $linear-gradient: linear-gradient(to right bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%));

@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './TodoFilter.module.scss'
+import { ThemeContext } from './../store/ThemeContext';
 
 const TodoFilter = (props) => {
+  const { theme } = useContext(ThemeContext);
   const [allFilterIsActive, setAllFilterIsActive] = useState(true);
   const [activeFilterIsActive, setActiveFilterIsActive] = useState(false);
   const [completedFilterIsActive, setCompletedFilterIsActive] = useState(false);
@@ -35,7 +37,7 @@ const TodoFilter = (props) => {
   };
 
   return (
-    <div className={styles['filter-container']}>
+    <div className={styles['filter-container']} data-theme={theme}>
       <button
         type="button"
         className={allFilterIsActive ? styles['active-filter'] : ''}

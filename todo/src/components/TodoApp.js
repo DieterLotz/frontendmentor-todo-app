@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../store/ThemeContext";
 import AddTodo from './AddTodo';
 import classes from './TodoApp.module.scss'
 import TodoList from "./TodoList";
@@ -23,10 +24,11 @@ const INITIAL_TODOS = [
 
 const TodoApp = () => {
     const [todoList, setTodoList] = useState(INITIAL_TODOS);
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const onClick = () => {
-        //toggle theme
-      };
+        toggleTheme();
+    };
 
     const onChangeHandler = key => {
         setTodoList(prev => {
@@ -72,7 +74,7 @@ const TodoApp = () => {
             <div className={classes['todo-container']}> 
                 <div className={classes['header']}>
                     <h1>Todo</h1>
-                    <img src={SunIcon} alt="" onClick={onClick}/>
+                    <img src={theme === "dark" ? SunIcon : MoonIcon} alt="" onClick={onClick}/>
                 </div>
                 <AddTodo onSubmit={onSubmitHandler}/>
                 <TodoList todoList={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>

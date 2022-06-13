@@ -7,7 +7,14 @@
     width: 100%;
     height: auto;
     min-height: 3rem;
-    background-color: $dark-very-dark-desaturated-blue;
+
+    &[data-theme=dark] {
+        background-color: $dark-very-dark-desaturated-blue;
+    }
+    &[data-theme=light] {
+        background-color: $light-very-light-gray;
+    }
+
     z-index: 4;
     margin-top: 1rem;
     border-radius: $global-border-radius;
@@ -16,7 +23,14 @@
         display: flex;
         background: transparent;
         box-sizing: border-box;
-        border-bottom: 1px solid $dark-very-dark-grayish-blue-hover;
+
+        &[data-theme=dark] {
+            border-bottom: 1px solid $dark-very-dark-grayish-blue-hover;
+        }    
+        &[data-theme=light] {
+            border-bottom: 1px solid $light-light-grayish-blue;
+        }
+        
         align-items: center;
         height: 3rem;
 
@@ -30,9 +44,9 @@
             width: 100%;
             margin: 0 1rem;
             font-family: $font-family;
-            font-weight: 300;
+            font-weight: 400;
             color: $dark-dark-grayish-blue;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             cursor: pointer;
         }
 
@@ -41,7 +55,12 @@
         }
 
         input[type=checkbox]:not(:checked) ~ label {
-            color: $dark-light-grayish-blue;
+            &[data-theme=dark] {
+                color: $dark-light-grayish-blue;
+            }    
+            &[data-theme=light] {
+                color: $light-very-dark-grayish-blue;
+            }
         }
 
         button {
@@ -62,8 +81,15 @@
         align-items: center;
         height: 3rem;
         margin: 0 $global-margin;
-        color: $dark-dark-grayish-blue;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+
+        &[data-theme=dark] {
+            color: $dark-dark-grayish-blue;
+        }    
+        &[data-theme=light] {
+            color: $light-dark-grayish-blue;
+        }
 
         & button[type=submit]:last-of-type {
             margin: 0;
@@ -75,7 +101,12 @@
             cursor: pointer;
             
             &:hover {
-                color: $dark-light-grayish-blue-hover;
+                &[data-theme=dark] {
+                    color: $dark-light-grayish-blue-hover;
+                }    
+                &[data-theme=light] {
+                    color: $light-very-dark-grayish-blue;
+                }
             }
         }
     }

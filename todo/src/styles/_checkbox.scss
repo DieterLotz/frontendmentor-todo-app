@@ -9,7 +9,6 @@ input[type=checkbox] {
     min-width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    border: 1px solid $dark-very-dark-grayish-blue;
     margin-left: $global-margin;
     appearance: none;
     -webkit-appearance: none;
@@ -22,22 +21,47 @@ input[type=checkbox] {
         border: none;
     }
 
-    &:not(:checked) {
-        background: $linear-gradient no-repeat;
-        background-size: 100%, 100%;
-        background-position: center;
-        border: none;
+    &[data-theme=dark] {
+        border: 1px solid $dark-very-dark-grayish-blue;
+        &:hover {
+            border:none;
+            background: $linear-gradient no-repeat;
+            background-size: 100%, 100%;
+            background-position: center;
+    
+            &::after {
+                box-sizing: border-box;
+                position: absolute;
+                content: "";
+                top: .8px;
+                left: .8px;
+                width: 92%;
+                height: 92%;
+                border-radius: 50%;
+                background-color: $dark-very-dark-desaturated-blue;
+            }
+        }
+    }
 
-        &::after {
-            box-sizing: border-box;
-            position: absolute;
-            content: "";
-            top: .8px;
-            left: .8px;
-            background-color: $dark-very-dark-desaturated-blue;
-            width: 92%;
-            height: 92%;
-            border-radius: 50%;
+    &[data-theme=light] {
+        border: 1px solid $light-dark-grayish-blue;
+        &:hover {
+            border:none;
+            background: $linear-gradient no-repeat;
+            background-size: 100%, 100%;
+            background-position: center;
+    
+            &::after {
+                box-sizing: border-box;
+                position: absolute;
+                content: "";
+                top: .8px;
+                left: .8px;
+                width: 92%;
+                height: 92%;
+                border-radius: 50%;
+                background-color: $light-very-light-gray;
+            }
         }
     }
 }
