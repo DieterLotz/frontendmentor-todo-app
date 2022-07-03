@@ -9,6 +9,7 @@ input[type=checkbox] {
     min-width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
+    border: 1px solid $dark-very-dark-grayish-blue;
     margin-left: $global-margin;
     appearance: none;
     -webkit-appearance: none;
@@ -21,8 +22,7 @@ input[type=checkbox] {
         border: none;
     }
 
-    &[data-theme=dark] {
-        border: 1px solid $dark-very-dark-grayish-blue;
+    &[data-theme=dark]:not(:checked) {
         &:hover {
             border:none;
             background: $linear-gradient no-repeat;
@@ -43,8 +43,7 @@ input[type=checkbox] {
         }
     }
 
-    &[data-theme=light] {
-        border: 1px solid $light-dark-grayish-blue;
+    &[data-theme=light]:not(:checked) {
         &:hover {
             border:none;
             background: $linear-gradient no-repeat;
