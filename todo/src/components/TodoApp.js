@@ -19,6 +19,11 @@ const INITIAL_TODOS = [
         key: uuidv4(),
         text: 'Do the washing',
         isCompleted: true
+    },
+    {
+        key: uuidv4(),
+        text: 'Tidy room',
+        isCompleted: false
     }
 ];
 
@@ -77,7 +82,7 @@ const TodoApp = () => {
                     <img src={theme === "dark" ? SunIcon : MoonIcon} alt="" onClick={onClick}/>
                 </div>
                 <AddTodo onSubmit={onSubmitHandler}/>
-                <TodoList todoList={todoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
+                <TodoList todoList={todoList} setTodoList={setTodoList} onChange={onChangeHandler} onRemove={removeTodo} onClearCompleted={clearCompleted}/>
             </div>
         </>
     );

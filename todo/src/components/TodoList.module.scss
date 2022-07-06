@@ -15,6 +15,16 @@
         background-color: $light-very-light-gray;
     }
 
+    &::after {
+        content: 'Drag and drop to reorder list';
+        position: absolute;
+        color: $dark-dark-grayish-blue;
+        font-size: 0.8rem;
+        bottom: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     z-index: 4;
     margin-top: 1rem;
     border-radius: $global-border-radius;
