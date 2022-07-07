@@ -13,37 +13,35 @@
     border-radius: $global-border-radius;
     padding: 0 2rem;
 
+    button {
+       
+        margin: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: $font-family;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
     &[data-theme=dark] {
         background-color: $dark-very-dark-desaturated-blue;
 
         button {
             color: $dark-dark-grayish-blue;
-            margin: 0;
-            border: none;
-            outline: none;
-            background: transparent;
-            font-family: $font-family;
-            font-weight: 600;
-            cursor: pointer;
-    
+
             &:hover {
                 color: $dark-light-grayish-blue-hover;
             }
         }
-    }    
+    }
+
     &[data-theme=light] {
         background-color: $light-very-light-gray;
 
         button {
             color: $light-dark-grayish-blue;
-            margin: 0;
-            border: none;
-            outline: none;
-            background: transparent;
-            font-family: $font-family;
-            font-weight: 600;
-            cursor: pointer;
-    
+
             &:hover {
                 color: $light-very-dark-grayish-blue;
             }

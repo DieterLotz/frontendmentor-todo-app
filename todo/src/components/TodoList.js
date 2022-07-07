@@ -56,20 +56,19 @@ const TodoList = (props) => {
                 <div className={styles.todo} 
                     id={todo.key} 
                     key={todo.key} 
-                    data-theme={theme} 
                     draggable={true} 
                     onDragStart={dragStartHandler}
                     onDragOver={dragOverHandler}
                     onDrop={dropHandler}>
-                    <input type="checkbox" checked={todo.isCompleted} onChange={() => {props.onChange(todo.key)}} data-theme={theme}></input>
-                    <label data-theme={theme}>{todo.text}</label>
+                    <input type="checkbox" checked={todo.isCompleted} onChange={() => {props.onChange(todo.key)}}></input>
+                    <label>{todo.text}</label>
                     <button onClick={() => { props.onRemove(todo.key)}}></button>
                 </div>)
             })}
-            <div className={styles['filter-section']} data-theme={theme}>
+            <div className={styles['filter-section']}>
                 <label>{filteredTodos.filter((todo) => todo.isCompleted === false).length} items left</label>
                 <TodoFilter onFilter={filterChangedHandler}/>
-                <button type='submit' onClick={props.onClearCompleted} data-theme={theme}>Clear Completed</button>
+                <button type='submit' onClick={props.onClearCompleted}>Clear Completed</button>
             </div>
         </div>
     );

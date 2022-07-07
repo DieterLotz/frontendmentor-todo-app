@@ -37,8 +37,8 @@ const AddTodo = (props) => {
     return ( 
         <div className={styles['add-todo-container']} data-theme={theme}>
            <form className={styles['todo-form']} onSubmit={onSubmitHandler}>
-            <input type="checkbox" onChange={handleIsCompletedOnChange} checked={enteredTodo.isCompleted} data-theme={theme}></input>
-            <input type="text" placeholder="Create a new todo..." onChange={handleTodoOnChange} value={enteredTodo.text} data-theme={theme}></input>
+            <input type="checkbox" onChange={handleIsCompletedOnChange} checked={enteredTodo.isCompleted}></input>
+            <input type="text" placeholder="Create a new todo..." onChange={handleTodoOnChange} value={enteredTodo.text}></input>
            </form>
         </div>
     );

@@ -8,10 +8,18 @@
 
     &[data-theme=dark] {
         background-color: $dark-very-dark-desaturated-blue;
+        
+        .todo-form input[type=text] {
+            color: $dark-light-grayish-blue;
+        }
     }
 
     &[data-theme=light] {
         background-color: $light-very-light-gray;
+
+        .todo-form input[type=text] {
+            color: $light-very-dark-grayish-blue;
+        }
     }
 
    .todo-form {
@@ -29,14 +37,6 @@
             border: none;
             font-size: .9rem;
             cursor: text;
-
-            &[data-theme=dark] {
-                color: $dark-light-grayish-blue;
-            }
-        
-            &[data-theme=light] {
-                color: $light-very-dark-grayish-blue;
-            }
         }
    }
 }

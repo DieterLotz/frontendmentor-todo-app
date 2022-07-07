@@ -7,13 +7,9 @@
     width: 100%;
     height: auto;
     min-height: 3rem;
-
-    &[data-theme=dark] {
-        background-color: $dark-very-dark-desaturated-blue;
-    }
-    &[data-theme=light] {
-        background-color: $light-very-light-gray;
-    }
+    z-index: 4;
+    margin-top: 1rem;
+    border-radius: $global-border-radius;
 
     &::after {
         content: 'Drag and drop to reorder list';
@@ -25,22 +21,10 @@
         transform: translateX(-50%);
     }
 
-    z-index: 4;
-    margin-top: 1rem;
-    border-radius: $global-border-radius;
-
     .todo {
         display: flex;
         background: transparent;
-        box-sizing: border-box;
-
-        &[data-theme=dark] {
-            border-bottom: 1px solid $dark-very-dark-grayish-blue-hover;
-        }    
-        &[data-theme=light] {
-            border-bottom: 1px solid $light-light-grayish-blue;
-        }
-        
+        box-sizing: border-box;        
         align-items: center;
         height: 3rem;
 
@@ -64,15 +48,6 @@
             text-decoration: line-through;
         }
 
-        input[type=checkbox]:not(:checked) ~ label {
-            &[data-theme=dark] {
-                color: $dark-light-grayish-blue;
-            }    
-            &[data-theme=light] {
-                color: $light-very-dark-grayish-blue;
-            }
-        }
-
         button {
             margin: 0 1rem;
             outline: none;
@@ -94,13 +69,6 @@
         font-size: 0.9rem;
         font-weight: 400;
 
-        &[data-theme=dark] {
-            color: $dark-dark-grayish-blue;
-        }    
-        &[data-theme=light] {
-            color: $light-dark-grayish-blue;
-        }
-
         & button[type=submit]:last-of-type {
             margin: 0;
             border: none;
@@ -109,14 +77,45 @@
             background: transparent;
             font-family: $font-family;
             cursor: pointer;
-            
-            &:hover {
-                &[data-theme=dark] {
-                    color: $dark-light-grayish-blue-hover;
-                }    
-                &[data-theme=light] {
-                    color: $light-very-dark-grayish-blue;
-                }
+        }
+    }
+
+    &[data-theme=dark] {
+        background-color: $dark-very-dark-desaturated-blue;
+
+        .todo {
+            border-bottom: 1px solid $dark-very-dark-grayish-blue-hover;
+
+            input[type=checkbox]:not(:checked) ~ label {
+               color: $dark-light-grayish-blue;
+            }
+        }
+
+        .filter-section {
+            color: $dark-dark-grayish-blue;
+
+            & button[type=submit]:last-of-type:hover {
+                color: $dark-light-grayish-blue-hover;
+            }
+        }
+    }
+
+    &[data-theme=light] {
+        background-color: $light-very-light-gray;
+
+        .todo {
+            border-bottom: 1px solid $light-light-grayish-blue;
+
+            input[type=checkbox]:not(:checked) ~ label { 
+                color: $light-very-dark-grayish-blue;
+            }
+        }
+
+        .filter-section {
+            color: $light-dark-grayish-blue;
+
+            & button[type=submit]:last-of-type:hover {
+                color: $light-very-dark-grayish-blue;
             }
         }
     }
